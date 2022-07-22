@@ -8,6 +8,8 @@ chai.use(chaiBN);
 
 const chaiAsPromised = require("chai-as-promised");
 chai.use(chaiAsPromised);
+require("dotenv").config({path: "../.env"});
+
 
 const expect  = chai.expect;
 
@@ -16,7 +18,7 @@ contract("Token Test", function (accounts) {
     const [deployerAccount, recipient, anotherAccount] = accounts;
 
     beforeEach(async () => {
-        this.myToken = await Token.new(1000000);
+        this.myToken = await Token.new(process.env.INITIAL_TOKENS);
     })
 
     it("all tokens should be in my account", async () => {
