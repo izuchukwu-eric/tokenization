@@ -14,6 +14,7 @@ contract("TokenSale Test", function (accounts) {
 
     it("should not have any token in my deployerAccount", async () => {
         const instance = await Token.deployed();
+        
         await expect(instance.balanceOf(deployerAccount)).to.eventually.be.a.bignumber.equal(new BN(0));
     })
 

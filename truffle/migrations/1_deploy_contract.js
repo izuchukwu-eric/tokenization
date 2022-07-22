@@ -11,5 +11,5 @@ module.exports = async function (deployer) {
 
   //transfer tokens to the tokenSale contract
   const instance = await MyToken.deployed();
-  instance.transfer(MyTokenSale.address, process.env.INITIAL_TOKENS);
+  await instance.transfer(MyTokenSale.address, process.env.INITIAL_TOKENS);
 };
