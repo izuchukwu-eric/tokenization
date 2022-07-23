@@ -1,6 +1,8 @@
 pragma solidity 0.6.1;
 
 import "./Crowdsale.sol";
+import "./KycContract.sol";
+
 
 contract MyTokenSale is Crowdsale {
 
